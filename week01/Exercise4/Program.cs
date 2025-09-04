@@ -6,16 +6,17 @@ class Program
     static void Main(string[] args)
     {
         List<int> numbers = new List<int>();
-        int choice;
-        do
+        int choice = -1;
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+        while (choice != 0)
         {
-            Console.Write("Enter a list of number, type 0 when finished: ");
+            Console.Write("Enter number: ");
             choice = int.Parse(Console.ReadLine());
             if (choice != 0)
             {
                 numbers.Add(choice);
             }
-        } while (choice != 0);
+        }
 
         int i = 0;
         int sum = 0;
