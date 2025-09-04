@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise3 Project.");
+        Console.Write("What is the magic number?");
+        int guess = Console.ReadLine();
+        Console.Write($"{guess}");
     }
 }
