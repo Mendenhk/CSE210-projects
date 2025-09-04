@@ -6,7 +6,7 @@ class Program
     {
 
         int guess = 0;
-        int playAgain = -1;
+        string playAgain = "";
         int guesses = 0;
 
         do
@@ -32,9 +32,9 @@ class Program
             Console.WriteLine("You guessed it!");
             Console.WriteLine($"It took you {guesses} tries to guess the number.");
             Console.Write("Would you like to play again? ");
-            Console.Write("(Enter 1 for yes or 0 for no): ");
-            playAgain = int.Parse(Console.ReadLine());
-        } while (playAgain != 0);
+            Console.Write("(Enter yes to play again.): ");
+            playAgain = (Console.ReadLine());
+        } while (playAgain == "yes");
         Console.WriteLine("Thank you for playing.");
     }
 }
