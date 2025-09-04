@@ -31,7 +31,8 @@ class Program
             } while (guess != number);
             Console.WriteLine("You guessed it!");
             Console.WriteLine($"It took you {guesses} tries to guess the number.");
-            Console.Write("Would you like to play again? Enter 1 for yes or 0 for no: ");
+            Console.Write("Would you like to play again? ");
+            Console.Write("(Enter 1 for yes or 0 for no): ");
             playAgain = int.Parse(Console.ReadLine());
         } while (playAgain != 0);
         Console.WriteLine("Thank you for playing.");
