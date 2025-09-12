@@ -8,6 +8,7 @@ public class Journal
     {
         _entries.Add(newEntry);
     }
+
     public void DisplayAll()
     {
         foreach (Entry item in _entries)
@@ -15,6 +16,7 @@ public class Journal
             item.Display();
         }
     }
+   
     public void SaveToFile(string file)
     {
         using (StreamWriter outputFile = new StreamWriter(file))
@@ -26,6 +28,7 @@ public class Journal
             _entries.Clear();
         }
     }
+   
     public void LoadFromFile(string file)
     {
         //reads all file lines into the string array "lines"
