@@ -5,11 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        MotivationGenerator motivationGenerator = new MotivationGenerator();
         PromptGenerator promptGenerator = new PromptGenerator();
         Journal journal = new Journal();
 
         Console.WriteLine("");
         Console.WriteLine("Welcome to the Journal Program!");
+        Console.WriteLine(motivationGenerator.GetMotivation());
 
         string choice = "";
         while (choice != "5")
