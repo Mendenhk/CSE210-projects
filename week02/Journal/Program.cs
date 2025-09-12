@@ -44,6 +44,17 @@ class Program
             {
                 journal.DisplayAll();
             }
+            else if (choice == "3")
+            {
+                Console.WriteLine("");
+            }
+            else if (choice == "4")
+            {
+                string fileName = "";
+                Console.WriteLine("What is the filename?");
+                fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
+            }
         }
     }
 }

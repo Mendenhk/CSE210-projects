@@ -17,7 +17,13 @@ public class Journal
     }
     public void SaveToFile(string file)
     {
-        Console.WriteLine("");
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            foreach (Entry item in _entries)
+            {
+                outputFile.WriteLine($"{item._date}, {item._promptText}, {item._entryText}");
+            }
+        }
     }
     public void LoadFromFile(string file)
     {
