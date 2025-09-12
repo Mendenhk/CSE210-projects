@@ -5,19 +5,45 @@ class Program
 {
     static void Main(string[] args)
     {
-        string input;
         PromptGenerator promptGenerator = new PromptGenerator();
-        Entry entry = new Entry();
         Journal journal = new Journal();
 
-        entry._promptText = promptGenerator.GetRandomPrompt();
-        Console.WriteLine(entry._promptText);
-        Console.Write(">");
-        entry._entryText = Console.ReadLine();
-        //creates an object with the current time.
-        DateTime theCurrentTime = DateTime.Now;
-        //converts the object into a string with the date (not the time)
-        entry._date = theCurrentTime.ToShortDateString();
-        entry.Display();
+        Console.WriteLine("");
+        Console.WriteLine("Welcome to the Journal Program!");
+
+        string choice = "";
+        while (choice != "5")
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Please select one fo the following choices:");
+            Console.WriteLine("1. Write an entry");
+            Console.WriteLine("2. Display current entries");
+            Console.WriteLine("3. Load saved entries");
+            Console.WriteLine("4. Save current entries");
+            Console.WriteLine("5. Quit");
+            Console.Write("> ");
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                //creating a new instance of Entry with each choice of 1.  I learned that the new instances can all have the same variable name for our purposes.
+                Entry entry = new Entry();
+                entry._promptText = promptGenerator.GetRandomPrompt();
+                Console.WriteLine("");
+                Console.WriteLine(entry._promptText);
+                Console.Write(">");
+                entry._entryText = Console.ReadLine();
+                //creates an object with the current time.
+                DateTime theCurrentTime = DateTime.Now;
+                //converts the object into a string with the date (not the time)
+                entry._date = theCurrentTime.ToShortDateString();
+                journal.AddEntry(entry);
+            }
+
+            else if (choice == "2")
+            {
+                journal.DisplayAll();
+            }
+        }
     }
 }
