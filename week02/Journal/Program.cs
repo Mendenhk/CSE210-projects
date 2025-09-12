@@ -1,6 +1,9 @@
 using System;
 using System.IO;
 
+//Exceeding Requirements:  I added a new class called MotivationGenerator.  This class saves motivational statements in an array, and the method in this class randomly chooses one of these motivational statements and returns it as a string.
+//The method is called at the beginning of every program start to give the user reasons to continue journaling.  
+
 class Program
 {
     static void Main(string[] args)
