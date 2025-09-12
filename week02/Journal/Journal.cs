@@ -23,10 +23,22 @@ public class Journal
             {
                 outputFile.WriteLine($"{item._date}, {item._promptText}, {item._entryText}");
             }
+            _entries.Clear();
         }
     }
     public void LoadFromFile(string file)
     {
-        Console.WriteLine("");
+        //reads all file lines into the string array "lines"
+        string[] lines = System.IO.File.ReadAllLines(file);
+        //separates each string of lines into a smaller array of strings using the comma as a separator.  So in this case it would be an array of three strings.
+        foreach (string line in lines)
+        {
+            Entry entry = new Entry();
+            string[] parts = line.Split(",");
+            entry._date = parts[0];
+            entry._promptText = parts[1];
+            entry._entryText = parts[2];
+            AddEntry(entry);
+        }
     }
 }

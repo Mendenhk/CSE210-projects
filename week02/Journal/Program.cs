@@ -46,7 +46,10 @@ class Program
             }
             else if (choice == "3")
             {
-                Console.WriteLine("");
+                string fileName = "";
+                Console.WriteLine("What is the filename?");
+                fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
             }
             else if (choice == "4")
             {
