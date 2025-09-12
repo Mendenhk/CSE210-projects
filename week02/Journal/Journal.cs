@@ -25,7 +25,6 @@ public class Journal
             {
                 outputFile.WriteLine($"{item._date}, {item._promptText}, {item._entryText}");
             }
-            _entries.Clear();
         }
     }
    
