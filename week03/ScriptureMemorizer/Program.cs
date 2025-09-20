@@ -1,6 +1,7 @@
 //Next step is to assemble the initial message from the word instance list and display it to the user. 
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 class Program
 {
@@ -17,10 +18,17 @@ class Program
 
         Scripture scripture = new Scripture(reference, scriptureText);
 
-        Console.Clear();
-        Console.WriteLine(scripture.GetDisplayText());
+        string choice = "";
+        while (choice != "quit")
+        {
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine("");
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            choice = Console.ReadLine();
+        }
 
         // Console.WriteLine("");
-        // Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
-    }
+            // Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
+        }
 }
