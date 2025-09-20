@@ -17,6 +17,9 @@ class Program
 
         Scripture scripture = new Scripture(reference, scriptureText);
 
+        Console.Clear();
+        Console.WriteLine(scripture.GetDisplayText());
+
         // Console.WriteLine("");
         // Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
     }

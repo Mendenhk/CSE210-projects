@@ -23,20 +23,25 @@ public class Scripture
             Word singleWord = new Word(word);
             _words.Add(singleWord);
         }
-        foreach (Word instance in _words)
-        {
-            Console.WriteLine(instance.GetDisplayText());
-        }
     }
 
     //methods
-    public void HideRandomWords() {
-        Console.WriteLine("blank");
-    }
-
-    // public string GetDisplayText() {
+    // public void HideRandomWords() {
     //     Console.WriteLine("blank");
     // }
+
+    //finished
+    public string GetDisplayText()
+    {
+        string displayText = "";
+        string fullText = "";
+        foreach (Word word in _words)
+        {
+            displayText += word.GetDisplayText() + " ";
+        }
+        fullText = _reference.GetDisplayText() + " " + displayText;
+        return fullText;
+    }
 
     // public bool IsCompletelyHidden() {
     //     Console.WriteLine("blank");
