@@ -8,14 +8,25 @@ public class Scripture
     private Reference _reference;
 
     //list of word objects
-    private List<Word> _words;
+    private List<Word> _words = new List<Word>();
 
     //constructors
 
-    //text is the text of the scripture, so a sting of text (The scripture) is to be passed to this constructor, then the constructor creates a list and splits up the words in the string to create Word objects for each word and put them in the list.  Where does this constructor get the scripture text?
+    //text is the text of the scripture, so a sting of text (The scripture) is to be passed to this constructor, then the constructor creates a list and splits up the words in the string to create Word objects for each word and put them in the list.
     public Scripture(Reference reference, string text)
     {
-        Console.WriteLine("blank");
+        _reference = reference;
+        //The below should be a method, but no such method was outlined in the assignment.
+        string[] textArray = text.Split(" ");
+        foreach (string word in textArray)
+        {
+            Word singleWord = new Word(word);
+            _words.Add(singleWord);
+        }
+        foreach (Word instance in _words)
+        {
+            Console.WriteLine(instance.GetDisplayText());
+        }
     }
 
     //methods
@@ -23,12 +34,11 @@ public class Scripture
         Console.WriteLine("blank");
     }
 
-    //calls the Reference classes GetDisplayText()
-    public string GetDisplayText() {
-        Console.WriteLine("blank");
-    }
+    // public string GetDisplayText() {
+    //     Console.WriteLine("blank");
+    // }
 
-    public bool IsCompletelyHidden() {
-        Console.WriteLine("blank");
-    }
+    // public bool IsCompletelyHidden() {
+    //     Console.WriteLine("blank");
+    // }
 }
