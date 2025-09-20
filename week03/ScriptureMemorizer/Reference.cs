@@ -1,3 +1,5 @@
+//This class does the following: 
+//-gets the display text of the reference (the reference is the book, chapter, and verse(s))
 public class Reference
 {
     //attributes
@@ -6,7 +8,6 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    //constructors
     public Reference(string book, int chapter, int verse)
     {
         Console.WriteLine("blank");
@@ -18,8 +19,18 @@ public class Reference
     }
 
     //methods
+    //finished: need to check
     public string GetDisplayText()
     {
-        Console.WriteLine("blank");
+        string displayText;
+        if (_endVerse == 0)
+        {
+            displayText = $"{_book} {_chapter}:{_verse} ";
+        }
+        else
+        {
+            displayText = $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
+        return displayText;
     }
 }
