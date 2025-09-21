@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
+//Exceeding requirements
+//1. added a class, ScriptureBase, to hold more than one scripture, and a method within to randomly choose one of the scriptures and return that information as a string.  The string is parsed and assigned in the Program class.
+//2. stretch challenge of only randomly selecting from non hidden words completed.  This was done by creating a new list in Scripture that holds only Word instances who's words are not hidden, then randomly choosing from this list. 
+
 class Program
 {
     static void Main(string[] args)
