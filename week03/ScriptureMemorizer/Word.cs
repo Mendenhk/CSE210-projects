@@ -19,26 +19,31 @@ public class Word
     }
 
     //METHODS
-    // public void Hide()
-    // {
-    //     Console.WriteLine("blank");
-    //     // //sets the boolean to no.
-    // }
+    public void Hide()
+    {
+        _isHidden = true;
+    }
 
-    // public void Show()
-    // {
-    //     Console.WriteLine("blank");
-    // //maybe sets the boolean to yes?
-    // }
+    public void Show()
+    {
+        _isHidden = false;
+    }
 
-    // public bool IsHidden()
-    // {
-    //     Console.WriteLine("blank");
-    // }
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
 
-    //finished
     public string GetDisplayText()
     {
-        return _text;
+        if (!_isHidden)
+        {
+            return _text;
+        }
+        else
+        {
+            //returns a string that contains the length number of underscores
+            return new string('_', _text.Length);
+        }
     }
 }

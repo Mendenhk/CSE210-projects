@@ -22,15 +22,44 @@ public class Scripture
         {
             Word singleWord = new Word(word);
             _words.Add(singleWord);
+            //initialize boolean to yes so can create list for random
+            singleWord.Show();
         }
     }
 
-    //methods
-    // public void HideRandomWords() {
-    //     Console.WriteLine("blank");
-    // }
+    //METHODS
+    public void HideRandomWords()
+    {
+        //creates a list of Word instances that are not hidden.  Keeps track of available words to choose from.
+        List<Word> availableWords = new List<Word>();
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden() == false)
+            {
+                availableWords.Add(word);
+            }
+        }
 
-    //finished
+        Random random = new Random();
+
+        //three words hidden because the demo video hid three at a time.
+        int wordsToHide = 3; 
+        for (int i = 0; i < wordsToHide; i++)
+        {
+            if (availableWords.Count == 0)
+            {
+                //exits for loop if all words are hidden
+                break;
+            }
+            int index = random.Next(0, availableWords.Count);
+            //since instances are saved by reference, this should also change the value of the related instance in _words.
+            availableWords[index].Hide();
+            //removes newly hidden word from list of options to hide
+            availableWords.RemoveAt(index);
+            int j = 0;
+        }
+    }
+
     public string GetDisplayText()
     {
         string displayText = "";
@@ -43,7 +72,16 @@ public class Scripture
         return fullText;
     }
 
-    // public bool IsCompletelyHidden() {
-    //     Console.WriteLine("blank");
-    // }
+    public bool IsCompletelyHidden()
+    {
+        foreach (Word instance in _words)
+        {
+            if (!instance.IsHidden())
+            {
+                //returns false if any of the instances/words are not hidden
+                return false;
+            }
+        }
+        return true; //returns true if all of the instances/words are hidden
+    }
 }
