@@ -6,11 +6,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        string scriptureText = "Trust in the Lord with all thine heart; and lean not unto thine own understanding.  In all thy ways acknowledge him, and he shall direct thy paths.";
-        string scriptureBook = "Proverbs";
-        int scriptureChapter = 3;
-        int scriptureStartVerse = 5;
-        int scriptureEndVerse = 6;
+        //retrieving scriptures at random from a class that stores them
+        ScriptureBase scriptureBase = new ScriptureBase();
+        List<string> randomScripture = scriptureBase.ChooseRandomScripture();
+        string scriptureText = randomScripture[0];
+        string scriptureBook = randomScripture[1];
+        int scriptureChapter = int.Parse(randomScripture[2]);
+        int scriptureStartVerse = int.Parse(randomScripture[3]);
+        int scriptureEndVerse = int.Parse(randomScripture[4]);
 
         //stores scripture references in the reference instance
         Reference reference = new Reference(scriptureBook, scriptureChapter, scriptureStartVerse, scriptureEndVerse);
