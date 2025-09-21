@@ -1,8 +1,7 @@
-//This class does the following: 
-//-gets the display text of the reference (the reference is the book, chapter, and verse(s))
+
 public class Reference
 {
-    //attributes
+    //ATTRIBUTES
     private string _book;
     private int _chapter;
     private int _verse;
@@ -24,7 +23,6 @@ public class Reference
     }
 
     //methods
-    //finished: need to check
     public string GetDisplayText()
     {
         string displayText;

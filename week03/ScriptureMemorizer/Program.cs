@@ -1,4 +1,3 @@
-//random method (or somewhere) needs a way to stop running there are no more false values.
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;

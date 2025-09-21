@@ -1,18 +1,12 @@
-//this class does the following:
-//-hide random words
-//-"get the display text as a string" whether those words be shown or hidden.
-//-checks to see if all words are hidden to determine if the program should end.
 public class Scripture
 {
-    //attributes
+    //ATTRIBUTES
     private Reference _reference;
 
     //list of word objects
     private List<Word> _words = new List<Word>();
 
-    //constructors
-
-    //text is the text of the scripture, so a sting of text (The scripture) is to be passed to this constructor, then the constructor creates a list and splits up the words in the string to create Word objects for each word and put them in the list.
+    //CONSTRUCTORS
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
@@ -48,15 +42,12 @@ public class Scripture
         {
             if (availableWords.Count == 0)
             {
-                //exits for loop if all words are hidden
-                break;
+                break; //exits for loop if all words are hidden
             }
             int index = random.Next(0, availableWords.Count);
             //since instances are saved by reference, this should also change the value of the related instance in _words.
             availableWords[index].Hide();
-            //removes newly hidden word from list of options to hide
-            availableWords.RemoveAt(index);
-            int j = 0;
+            availableWords.RemoveAt(index);//removes newly hidden word from list of options to hide
         }
     }
 
@@ -78,8 +69,7 @@ public class Scripture
         {
             if (!instance.IsHidden())
             {
-                //returns false if any of the instances/words are not hidden
-                return false;
+                return false; //returns false if any of the instances/words are not hidden
             }
         }
         return true; //returns true if all of the instances/words are hidden
