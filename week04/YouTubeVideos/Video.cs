@@ -6,21 +6,46 @@ public class Video
     private string _title;
     private string _author;
     private int _length;
-    private List<Comment> _comments;
+    private List<Comment> _comments = new List<Comment>();
 
     //CONSTRUCTORS
-    public Video(/*string title, string author, int length, */List<(string Commenter, string CommentText)> comments) { //last imports a list of string tuples, and assigns them the "object-like" names of Name and String so dot notation can be used to extract them.  
-        foreach (var comment in comments)
+    public Video(string title, string author, int length, List<(string Commenter, string CommentText)> comments) //last imports a list of string tuples, and assigns them the "object-like" names of Name and String so dot notation can be used to extract them. 
+    {
+        _title = title;
+        _author = author;
+        _length = length;
+        // Console.WriteLine($"\nTitle: {_title}\nAuthor: {_author}\nLength: {_length}");
+        foreach (var tuple in comments)
         {
-            Console.WriteLine($"Name: {comment.Commenter}, Comment: {comment.CommentText}");
-            Console.WriteLine("");
+            Comment newComment = new Comment(tuple.Commenter, tuple.CommentText);
+            _comments.Add(newComment);  //creates a list of Comment instances
         }
+        // foreach (Comment instance in _comments)
+        // {
+        //     Console.WriteLine(instance.GetComments());
+        // }
     }
 
     //METHODS
-    public int NumberOfComments()
+    public string GetInformation()
     {
-        //blank
-        return 5; //not the correct return
+        string informationString = $"Title: {_title}\nAuthor: {_author}\nLength: {_length} seconds";
+        return informationString;
+    }
+    public int GetNumberOfComments()
+    {
+        int commentsNumber = _comments.Count;  //number of instances in _comments list
+        return commentsNumber;
+    }
+
+    public string GetComments()
+    {
+        string commentsString = "";
+        foreach (Comment instance in _comments)
+        {
+            string tempString = instance.GetComments();
+            commentsString += tempString;
+        }
+        return commentsString;
     }
 }
