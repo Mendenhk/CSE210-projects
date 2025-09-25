@@ -1,4 +1,4 @@
-//defines comments.  responsibility for tracking both the name of the person who made the comment and the text of the comment.
+//The Comments class defines comments.  It has responsibility for tracking both the name of the person who made the comment and the text of the comment.
 public class Comment
 {
     //ATTRIBUTES
