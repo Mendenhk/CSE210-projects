@@ -9,7 +9,13 @@ public class Product
     private int _quantity;
 
     //CONSTRUCTORS
-
+    public Product(string productName, int id, double price, int quantity)
+    {
+        _productName = productName;
+        _id = id;
+        _price = price;
+        _quantity = quantity;
+    }
     //METHODS
     //total cost is calculated by Order.
 }

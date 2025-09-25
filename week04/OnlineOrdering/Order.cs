@@ -6,7 +6,7 @@
 public class Order
 {
     //ATTRIBUTES
-    private List<string> _products;
+    private List<Product> _products;
     private string _customer;
     //CONSTRUCTORS
 
