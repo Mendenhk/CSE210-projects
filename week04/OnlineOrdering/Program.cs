@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Creating a list of all available products using a product constructor - would normally be in a database or file.
+        //PRODUCTS - Creating a list of all available products using a product constructor - would normally be in a database or file.
         List<Product> allProducts = new List<Product>();
         Product product = new Product("Red Sneakers", 8209, 59.99, 1);
         allProducts.Add(product);
@@ -20,10 +20,10 @@ class Program
         allProducts.Add(product);
         product = new Product("Lego Set", 5563, 49.99, 1);
         allProducts.Add(product);
-        
 
-
-        // //customer1
+        //CUSTOMERS - Creating a list of all customers (or all customers with orders) and their addresses using a Customer constructor - again, this would normally be in a database or file.   
+        List<Customer> allCustomers = new List<Customer>();
+        Customer customer = new Customer();
 
 
         //create a product list

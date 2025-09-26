@@ -4,9 +4,13 @@
 public class Address
 {
     //ATTRIBUTES
-    private string streetAddress; //(city, state/province, and country)
+    private string _streetAddress; //(city, state/province, and country)
 
     //CONSTRUCTORS
+    public Address(string street, string city, string state, string country)
+    {
+        _streetAddress = $"{street}\n{city}, {state}\n{country}";
+    }
 
     //METHODS
     public bool LivesUSA()

@@ -8,6 +8,12 @@ public class Customer
     private Address _address;  //a class
 
     //CONSTRUCTORS
+    public Customer(string name, string street, string city, string state, string country)
+    {
+        _name = name;
+        Address address = new Address(street, city, state, country);
+        _address = address;
+    }
 
     //METHODS
     public bool LivesInUSA()
