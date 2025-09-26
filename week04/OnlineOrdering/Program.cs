@@ -10,17 +10,17 @@ class Program
     {
         //PRODUCTS - Creating a list of all available products using a product constructor - would normally be in a database or file.
         List<Product> allProducts = new List<Product>();
-        Product product = new Product("Red Sneakers", 8209, 59.99, 1);
+        Product product = new Product("Red Sneakers", 8209, 60.00, 1);
         allProducts.Add(product);
         product = new Product("Carton Milk", 4057, 6.50, 2);
         allProducts.Add(product);
-        product = new Product("Tennis Racket", 6784, 140.99, 1);
+        product = new Product("Tennis Racket", 6784, 140.00, 1);
         allProducts.Add(product);
         product = new Product("Shaving Cream", 3753, 3.00, 2);
         allProducts.Add(product);
         product = new Product("Chocolate Bar", 4231, 2.50, 5);
         allProducts.Add(product);
-        product = new Product("Lego Set", 5563, 49.99, 1);
+        product = new Product("Lego Set", 5563, 49.00, 1);
         allProducts.Add(product);
 
         //CUSTOMERS - Creating a list of all customers (or all customers with orders) and their addresses using a Customer constructor - again, this would normally be in a database or file.   
@@ -41,7 +41,7 @@ class Program
         foreach (Order instance in orders)
         {
             Console.WriteLine(instance.PackingLabel()); //print packing label
-            Console.WriteLine($"Total Cost: {instance.TotalCost()}");  //print total cost
+            Console.WriteLine($"Total Cost: ${instance.TotalCost():F2}");  //print total cost
             Console.WriteLine("");
             Console.WriteLine(instance.ShippingLabel()); //print shipping label
         }

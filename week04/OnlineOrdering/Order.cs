@@ -45,7 +45,7 @@ public class Order
         string customerName = _customer.getCustomer();
         foreach (Product instance in _products)
         {
-            labelString += $"Item id: {instance.getId()}\n";
+            labelString += $"Item id: {instance.getId()}   No. items: {instance.GetQuantity()}    Item price: ${instance.GetPrice():F2}\n";
         }
         return $"PACKING LABEL\n***************\n{customerName}\n{labelString}";
     }
@@ -72,10 +72,12 @@ public class Order
         if (_customer.LivesInUSA())
         {
             total += 5;
+            Console.WriteLine("In USA shipping = $5");
         }
         else
         {
             total += 35;
+            Console.WriteLine("Outside of USA shiping = $35");
         }
         return total;  //not actual number
     }
