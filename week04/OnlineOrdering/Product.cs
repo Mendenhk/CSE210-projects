@@ -24,4 +24,16 @@ public class Product
     {
         return _id;
     }
+
+    //method added by me
+    public double GetPrice()
+    {
+        return _price;
+    }
+
+    //method added by me
+    public double GetQuantity()
+    {
+        return (double)_quantity;
+    }
 }

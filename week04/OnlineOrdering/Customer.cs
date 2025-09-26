@@ -16,17 +16,23 @@ public class Customer
     }
 
     //METHODS
-    //another method added my me
+    //another method added by me
     public string getCustomer()
     {
         return _name;
     }
 
+    //method added by me
+    public string getAddress()
+    {
+        string addressString = _address.ExtractAddress();
+        return addressString;
+    }
+
     public bool LivesInUSA()
     {
-        //calls a method on address to determine if lives in usa
-        //eg.  value = LivesInUSAAddress();
-        return true; //or false.  return value;
+        bool usaYes = _address.LivesUSA();
+        return usaYes; //or false.  return value;
     }
 
 }

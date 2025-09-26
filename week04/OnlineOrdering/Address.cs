@@ -15,14 +15,19 @@ public class Address
     //METHODS
     public bool LivesUSA()
     {
-        //extracts if lives in US or not.
-        
-        return true; //or false
+        if (_streetAddress.Contains("USA"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public string ExtractAddress()
     {
-        //returns all fields together with new lines where appropriate.
-        return "address";
+        string addressString = $"{_streetAddress}";
+        return addressString;
     }
 }

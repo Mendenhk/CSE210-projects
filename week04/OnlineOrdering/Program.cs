@@ -28,14 +28,21 @@ class Program
         customer = new Customer("Rupert Shen", "3000 A Street Unit #4", "Montreal", "Quebec", "Canada");
         allCustomers.Add(customer);
 
-        //ORDERS - Creating a list of customers and orders placed using an Order Constructor.  
+        //ORDERS - Creating a list of Order instances using an Order Constructor.  
         List<Order> orders = new List<Order>();
         Order order = new Order("Kathlyn Brown", [8209, 4057, 6784], allProducts, allCustomers);
         orders.Add(order);
         order = new Order("Rupert Shen", [3753, 4231, 5563], allProducts, allCustomers);
+        orders.Add(order);
 
         Console.WriteLine("");
-        Console.WriteLine("PACKING LABEL");
-        Console.WriteLine("********************");
+        foreach (Order instance in orders)
+        {
+            Console.WriteLine(instance.PackingLabel()); //print packing label
+            Console.WriteLine($"Total Cost: {instance.TotalCost()}");  //print total cost
+            Console.WriteLine("");
+            Console.WriteLine(instance.ShippingLabel()); //print shipping label
+        }
+        Console.WriteLine("");
     }
 }

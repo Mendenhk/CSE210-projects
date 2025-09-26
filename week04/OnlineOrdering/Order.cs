@@ -3,6 +3,8 @@
 // This company is based in the USA. If the customer lives in the USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
 // A packing label should list the name and product id of each product in the order.
 // A shipping label should list the name and address of the customer.
+using System.Reflection.Emit;
+
 public class Order
 {
     //ATTRIBUTES
@@ -23,11 +25,11 @@ public class Order
                 _customer = instance;
             }
         }
-        
+
         //creating a list of ordered product instances
-        foreach(int item in orderedProductIds)
+        foreach (int item in orderedProductIds)
         {
-            foreach(Product instance in allProducts)
+            foreach (Product instance in allProducts)
 
                 if (instance.getId() == item)
                 {
@@ -37,24 +39,44 @@ public class Order
     }
 
     //METHODS
-    // public double TotalCost()
-    // {
-    //     //calculates total order cost
-    //     //Total = sum of products + one time shipping cost of $5 (USA), $35 (foreign)
-    //     return 12.32;  //not actual number
-    // }
-
-    // public string PackingLabel()
-    // {
-    //     //returns packing label string
-    //     //(name and product id)
-    //     return "random string";
-    // }
+    public string PackingLabel()
+    {
+        string labelString = "";
+        string customerName = _customer.getCustomer();
+        foreach (Product instance in _products)
+        {
+            labelString += $"Item id: {instance.getId()}\n";
+        }
+        return $"PACKING LABEL\n***************\n{customerName}\n{labelString}";
+    }
 
     public string ShippingLabel()
     {
-    //returns shipping label string
-    //(name and address of customer)
-        return "random string";
+        //returns shipping label string
+        //(name and address of customer)
+        string customerName = _customer.getCustomer();
+        string address = _customer.getAddress();
+        return $"SHIPPING LABEL\n***************\n{customerName}\n{address}\n\n";
+    }
+    
+        public double TotalCost()
+    {
+        //calculates total order cost
+        //Total = sum of products + one time shipping cost of $5 (USA), $35 (foreign)
+        double total = 0;
+        foreach (Product instance in _products)
+        {
+            double subtotal = instance.GetPrice() * instance.GetQuantity();
+            total += subtotal;
+        }
+        if (_customer.LivesInUSA())
+        {
+            total += 5;
+        }
+        else
+        {
+            total += 35;
+        }
+        return total;  //not actual number
     }
 }
