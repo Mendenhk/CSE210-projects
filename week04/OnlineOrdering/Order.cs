@@ -20,7 +20,7 @@ public class Order
         //extracting and saving the customer instance
         foreach (Customer instance in allCustomers)
         {
-            if (instance.getCustomer() == customer)
+            if (instance.GetCustomer() == customer)
             {
                 _customer = instance;
             }
@@ -42,7 +42,7 @@ public class Order
     public string PackingLabel()
     {
         string labelString = "";
-        string customerName = _customer.getCustomer();
+        string customerName = _customer.GetCustomer();
         foreach (Product instance in _products)
         {
             labelString += $"Item id: {instance.GetId()}   No. items: {instance.GetQuantity()}    Item price: ${instance.GetPrice():F2}\n";
@@ -54,8 +54,8 @@ public class Order
     {
         //returns shipping label string
         //(name and address of customer)
-        string customerName = _customer.getCustomer();
-        string address = _customer.getAddress();
+        string customerName = _customer.GetCustomer();
+        string address = _customer.GetAddress();
         return $"SHIPPING LABEL\n***************\n{customerName}\n{address}\n\n";
     }
     

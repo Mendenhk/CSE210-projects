@@ -17,13 +17,13 @@ public class Customer
 
     //METHODS
     //another method added by me
-    public string getCustomer()
+    public string GetCustomer()
     {
         return _name;
     }
 
     //method added by me
-    public string getAddress()
+    public string GetAddress()
     {
         string addressString = _address.ExtractAddress();
         return addressString;
