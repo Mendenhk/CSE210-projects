@@ -8,7 +8,21 @@ public class Order
     //ATTRIBUTES
     private List<Product> _products;
     private string _customer;
+
     //CONSTRUCTORS
+    public Order(string customer, List<int> orderedProductIds, List<Product> allProducts)
+    {
+        _customer = customer;
+        foreach(int item in orderedProductIds)
+        {
+            foreach (Product instance in allProducts)
+            
+                if(instance.getId() == item){
+                    _products.Add(instance);
+                }
+            }
+        }
+    }
 
     //METHODS
     public double TotalCost()

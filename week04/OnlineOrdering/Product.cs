@@ -18,4 +18,9 @@ public class Product
     }
     //METHODS
     //total cost is calculated by Order.
+
+    public int getId()
+    {
+        return _id;
+    }
 }
