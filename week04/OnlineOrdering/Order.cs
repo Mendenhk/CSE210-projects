@@ -31,7 +31,7 @@ public class Order
         {
             foreach (Product instance in allProducts)
 
-                if (instance.getId() == item)
+                if (instance.GetId() == item)
                 {
                     _products.Add(instance);
                 }
@@ -45,7 +45,7 @@ public class Order
         string customerName = _customer.getCustomer();
         foreach (Product instance in _products)
         {
-            labelString += $"Item id: {instance.getId()}   No. items: {instance.GetQuantity()}    Item price: ${instance.GetPrice():F2}\n";
+            labelString += $"Item id: {instance.GetId()}   No. items: {instance.GetQuantity()}    Item price: ${instance.GetPrice():F2}\n";
         }
         return $"PACKING LABEL\n***************\n{customerName}\n{labelString}";
     }
