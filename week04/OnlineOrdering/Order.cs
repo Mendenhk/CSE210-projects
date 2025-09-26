@@ -7,42 +7,54 @@ public class Order
 {
     //ATTRIBUTES
     private List<Product> _products;
-    private string _customer;
+    private Customer _customer;
 
     //CONSTRUCTORS
-    public Order(string customer, List<int> orderedProductIds, List<Product> allProducts)
+    public Order(string customer, List<int> orderedProductIds, List<Product> allProducts, List<Customer> allCustomers)
     {
-        _customer = customer;
+        //initialize products
+        _products = new List<Product>();
+
+        //extracting and saving the customer instance
+        foreach (Customer instance in allCustomers)
+        {
+            if (instance.getCustomer() == customer)
+            {
+                _customer = instance;
+            }
+        }
+        
+        //creating a list of ordered product instances
         foreach(int item in orderedProductIds)
         {
-            foreach (Product instance in allProducts)
-            
-                if(instance.getId() == item){
+            foreach(Product instance in allProducts)
+
+                if (instance.getId() == item)
+                {
                     _products.Add(instance);
                 }
-            }
         }
     }
 
     //METHODS
-    public double TotalCost()
-    {
-        //calculates total order cost
-        //Total = sum of products + one time shipping cost of $5 (USA), $35 (foreign)
-        return 12.32;  //not actual number
-    }
+    // public double TotalCost()
+    // {
+    //     //calculates total order cost
+    //     //Total = sum of products + one time shipping cost of $5 (USA), $35 (foreign)
+    //     return 12.32;  //not actual number
+    // }
 
-    public string PackingLabel()
-    {
-        //returns packing label string
-        //(name and product id)
-        return "random string";
-    }
+    // public string PackingLabel()
+    // {
+    //     //returns packing label string
+    //     //(name and product id)
+    //     return "random string";
+    // }
 
     public string ShippingLabel()
     {
-        //returns shipping label string
-        //(name and address of customer)
+    //returns shipping label string
+    //(name and address of customer)
         return "random string";
     }
 }

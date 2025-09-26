@@ -16,6 +16,7 @@ public class Address
     public bool LivesUSA()
     {
         //extracts if lives in US or not.
+        
         return true; //or false
     }
 

@@ -19,6 +19,7 @@ public class Product
     //METHODS
     //total cost is calculated by Order.
 
+    //additional method added by me.  Called by order constructor.
     public int getId()
     {
         return _id;

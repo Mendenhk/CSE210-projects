@@ -1,4 +1,3 @@
-//Next, finish creating 2 customer instances.  Then work on Order Class and instances.
 //company needs to produce packing labels, shipping labels, and compute final prices for billing.  2 orders with 2-3 products.  Call the methods to get the packing label, the shipping label, and the total price of the order, and display the results of these methods.
 
 using System;
@@ -31,10 +30,12 @@ class Program
 
         //ORDERS - Creating a list of customers and orders placed using an Order Constructor.  
         List<Order> orders = new List<Order>();
-        Order order = new Order("Kathlyn Brown", [8209, 4057, 6784], allProducts);
+        Order order = new Order("Kathlyn Brown", [8209, 4057, 6784], allProducts, allCustomers);
         orders.Add(order);
-        order = new Order("Rupert Shen", [3753, 4231, 5563], allProducts);
+        order = new Order("Rupert Shen", [3753, 4231, 5563], allProducts, allCustomers);
 
-        // Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+        Console.WriteLine("");
+        Console.WriteLine("PACKING LABEL");
+        Console.WriteLine("********************");
     }
 }
