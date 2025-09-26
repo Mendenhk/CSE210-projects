@@ -1,3 +1,5 @@
+//next: add dollar sign, clean up text
+
 //company needs to produce packing labels, shipping labels, and compute final prices for billing.  2 orders with 2-3 products.  Call the methods to get the packing label, the shipping label, and the total price of the order, and display the results of these methods.
 
 using System;
