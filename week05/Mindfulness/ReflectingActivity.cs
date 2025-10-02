@@ -1,14 +1,14 @@
-public class ReflectingActivity()
+public class ReflectingActivity() : Activity
 {
     //ATTRIBUTES
     private List<string> _prompts;
     private List<string> _questions;
 
     //CONSTRUCTORS
-    public ReflectingActivity()
-    {
+    // public ReflectingActivity()
+    // {
         
-    }
+    // }
 
     //METHODS
     public void Run()

@@ -1,4 +1,4 @@
-public class BreathingActivity
+public class BreathingActivity : Activity
 {
     //ATTRIBUTES
 

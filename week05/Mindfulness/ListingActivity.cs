@@ -1,4 +1,4 @@
-public class ListingActivity
+public class ListingActivity : Activity
 {
     //ATTRIBUTES
     private int _count;

@@ -1,7 +1,7 @@
 public class Activity
 {
     //ATTRIBUTES
-    private string _name:
+    private string _name;
     private string _description;
     private int _duration;
 

@@ -1,6 +1,9 @@
 using System;
 
+//next: read all information.  Program the breathing activity - where do I store the beginning and ending messages?
+
 //Breathing Activity - Help the user pace their breathing to have a session of deep breathing for a certain amount of time. They might find more peace and less stress through the exercise.
+
 //Reflection Activity - Guide the user to think deeply, by having them consider a certain experience when they were successful or demonstrated strength. Then, prompt them with questions to reflect more deeply about details of this experience. They might discover more depth than they previously realized.
 
 //Listing Activity - Guide the user to think broadly, by helping them list as many things as they can in a certain area of strength or positivity. They might discover more breadth than they previously realized.
@@ -16,7 +19,7 @@ using System;
 // 1. The activity should begin with the standard starting message and prompt for the duration that is used by all activities.
 // 2. The description of this activity should be something like: "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
 // 3. After the starting message, the user is shown a series of messages alternating between "Breathe in..." and "Breathe out..."
-// 4. After each message, the program should pause for several seconds and show a countdown.
+// 4. After each message, the program should pause for several seconds and show a countdown.s
 // 5. It should continue until it has reached the number of seconds the user specified for the duration.
 // 6. The activity should conclude with the standard finishing message for all activities.
 
@@ -70,6 +73,7 @@ class Program
     static void Main(string[] args)
     {
         //loop for mindfulness choices
+        string choice;
         do
         {
             Console.WriteLine("Menu Options:");
@@ -77,8 +81,10 @@ class Program
             Console.WriteLine("   2. Start reflecting activity");
             Console.WriteLine("   3. Start listening activity");
             Console.WriteLine("   4. Quit");
+            Console.Write("Select a choice from the menu: ");
+            choice = Console.ReadLine();
         } while (choice != "4");
 
-        Console.WriteLine("Hello World! This is the Mindfulness Project.");
+        // Console.WriteLine("Hello World! This is the Mindfulness Project.");
     }
 }
