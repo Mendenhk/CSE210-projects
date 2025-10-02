@@ -34,19 +34,21 @@ public class Activity
 
     public void ShowSpinner(int seconds)  //spinner is not using duration.  Duration is used for the time of all of the activities.  The spinner is controlled by me.  
     {
+        List<string> animationStrings = new List<string>();
+        {
+            animationStrings.Add("|");
+            animationStrings.Add("/");
+            animationStrings.Add("-");
+            animationStrings.Add("\\");
+        }
         for (int i = 0; i < seconds; i++)
         {
-            Console.Write("\b  |");
-            Thread.Sleep(200);
-            Console.Write("\b  /");
-            Thread.Sleep(200);
-            Console.Write("\b  -");
-            Thread.Sleep(200);
-            Console.Write("\b  \\");
-            Thread.Sleep(200);
-            Console.Write("\b  |");
-            Thread.Sleep(200);
-
+            foreach (string s in animationStrings)
+            {
+                Console.Write($"  {s}");
+                Thread.Sleep(250);
+                Console.Write("\b \b");
+            }
         }
         Console.WriteLine();
 
@@ -54,6 +56,8 @@ public class Activity
 
     public void ShowCountDown(int second)
     {
-        //do something
+        for (int i = 4; i > 0; i--) {
+            
+        }
     }
 }

@@ -13,9 +13,9 @@ public class BreathingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
-        // Console.Write("How long, in seconds, would you like your session to last? ");
-        // int duration = int.Parse(Console.ReadLine());
-        // SetDuration(duration);
+        Console.Write("How long, in seconds, would you like your session to last? ");
+        int duration = int.Parse(Console.ReadLine());
+        SetDuration(duration);
         Console.WriteLine("Get ready...");
         ShowSpinner(4);
     }
