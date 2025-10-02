@@ -21,6 +21,11 @@ public class Activity
         _duration = duration;
     }
 
+    public int GetDuration()
+    {
+        return _duration;
+    }
+
     //METHODS
     public void DisplayStartingMessage()
     {
@@ -29,10 +34,13 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-        //do something
+        Console.WriteLine("Well done!!");
+        ShowSpinner(3);
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+        ShowSpinner(3);
     }
 
-    public void ShowSpinner(int seconds)  //spinner is not using duration.  Duration is used for the time of all of the activities.  The spinner is controlled by me.  
+    public void ShowSpinner(int seconds)
     {
         List<string> animationStrings = new List<string>();
         {
@@ -50,14 +58,17 @@ public class Activity
                 Console.Write("\b \b");
             }
         }
-        Console.WriteLine();
-
+        Console.WriteLine("");
     }
 
     public void ShowCountDown(int second)
     {
-        for (int i = 4; i > 0; i--) {
-            
+        for (int i = second; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
+        Console.WriteLine("");
     }
 }
