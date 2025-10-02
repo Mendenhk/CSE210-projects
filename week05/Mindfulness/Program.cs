@@ -89,6 +89,12 @@ class Program
                 BreathingActivity breathingActivity = new BreathingActivity();
                 breathingActivity.Run();
             }
+
+            if (choice == "2")
+            {
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                reflectingActivity.Run();
+            }
         } while (choice != "4");
 
     }

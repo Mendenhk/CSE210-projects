@@ -12,6 +12,7 @@ public class BreathingActivity : Activity
     //METHODS
     public void Run()
     {
+        Console.Clear();
         DisplayStartingMessage();
         Console.Write("How long, in seconds, would you like your session to last? ");
         int duration = int.Parse(Console.ReadLine());
