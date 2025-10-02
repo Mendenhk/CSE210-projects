@@ -1,28 +1,28 @@
-public class ListingActivity /*: Activity */
-{
-    //ATTRIBUTES
-    private int _count;
-    private List<string> _prompts;
+// public class ListingActivity /*: Activity */
+// {
+//     //ATTRIBUTES
+//     private int _count;
+//     private List<string> _prompts;
 
-    //CONSTRUCTORS
-    // ListingActivity()
-    // {
+//     //CONSTRUCTORS
+//     // ListingActivity()
+//     // {
         
-    // }
+//     // }
 
-    //METHODS
-    public void Run()
-    {
-        //do something
-    }
+//     //METHODS
+//     public void Run()
+//     {
+//         //do something
+//     }
 
-    public void GetRandomPrompt() //above listed as a string return
-    {
-        //do something 
-    }
+//     public void GetRandomPrompt() //above listed as a string return
+//     {
+//         //do something 
+//     }
 
-    public List<string> GetListFromUser()
-    {
-        return ["string1", "string2"];  //not actual
-    }
-}
+//     public List<string> GetListFromUser()
+//     {
+//         return ["string1", "string2"];  //not actual
+//     }
+// }
