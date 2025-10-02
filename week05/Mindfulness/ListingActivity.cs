@@ -1,14 +1,14 @@
-public class ListingActivity : Activity
+public class ListingActivity /*: Activity */
 {
     //ATTRIBUTES
     private int _count;
     private List<string> _prompts;
 
     //CONSTRUCTORS
-    ListingActivity()
-    {
+    // ListingActivity()
+    // {
         
-    }
+    // }
 
     //METHODS
     public void Run()

@@ -1,4 +1,4 @@
-public class ReflectingActivity() : Activity
+public class ReflectingActivity() /*: Activity */
 {
     //ATTRIBUTES
     private List<string> _prompts;

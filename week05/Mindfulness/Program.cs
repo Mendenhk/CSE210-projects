@@ -1,6 +1,6 @@
 using System;
 
-//next: read all information.  Program the breathing activity - where do I store the beginning and ending messages?
+//Next:  ask for time (in BreathingActivity) and write a setter to add it to Activity.
 
 //Breathing Activity - Help the user pace their breathing to have a session of deep breathing for a certain amount of time. They might find more peace and less stress through the exercise.
 
@@ -83,8 +83,13 @@ class Program
             Console.WriteLine("   4. Quit");
             Console.Write("Select a choice from the menu: ");
             choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly.  Clear your mind and focus on your breathing.");
+                breathingActivity.Run();
+            }
         } while (choice != "4");
 
-        // Console.WriteLine("Hello World! This is the Mindfulness Project.");
     }
 }

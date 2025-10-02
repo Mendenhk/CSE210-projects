@@ -3,14 +3,14 @@ public class BreathingActivity : Activity
     //ATTRIBUTES
 
     //CONSTRUCTORS
-    public BreathingActivity()
+    public BreathingActivity(string name, string description): base(name, description)
     {
-        
     }
 
     //METHODS
     public void Run()
     {
-        //do something
+        DisplayStartingMessage();
+        
     }
 }

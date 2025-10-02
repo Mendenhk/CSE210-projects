@@ -6,14 +6,16 @@ public class Activity
     private int _duration;
 
     //CONSTRUCTORS
-    public Activity() {
-        
+    public Activity(string name, string description)
+    {
+        _name = name;
+        _description = description;
     }
 
     //METHODS
     public void DisplayStartingMessage()
     {
-        //do something
+        Console.WriteLine($"Welcome to the {_name}.\n\n{_description}");
     }
 
     public void DisplayEndingMessage()
