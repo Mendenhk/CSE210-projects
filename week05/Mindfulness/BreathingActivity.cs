@@ -25,13 +25,53 @@ public class BreathingActivity : Activity
         DateTime endTime = startTime.AddSeconds(GetDuration());
         while (DateTime.Now < endTime)
         {
-            Console.Write("Breath in...");
-            ShowCountDown(4);
-            Console.Write("Now breathe out...");
-            ShowCountDown(6);
-            Console.WriteLine("");
+            ShowBreatheIn(4);
+            ShowBreatheOut(6);
+            // Console.Write("Breathe in...");
+            // ShowCountDown(4);
+            // Console.Write("Now breathe out...");
+            // ShowCountDown(6);
+            // Console.WriteLine("");
         }
         DisplayEndingMessage();
         Console.Clear();
+    }
+    public void ShowBreatheIn(int second)
+    {
+        string space = "";
+        // string backSpace = "\b \b";
+        for (int i = second; i > 0; i--)
+        {
+            Console.Write($"{i}: B{space}r{space}e{space}a{space}t{space}h{space}e{space} I{space}n");
+            Thread.Sleep(1000);
+            string repeatedString = new string(' ',100);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(repeatedString);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            // Console.Write($"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b{backSpace}");
+            space += " ";
+            // backSpace += "\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+        }
+        Console.WriteLine("0: Breath In");
+    }
+
+    public void ShowBreatheOut(int second)
+    {
+        string space = new string(' ', second); //sets spaces to number of times for loop is iterated.  Needed because will remove this number of spaces by end of loop.
+        // string backSpace = "\b \b";
+        for (int i = second; i > 0; i--)
+        {
+            Console.Write($"{i}: B{space}r{space}e{space}a{space}t{space}h{space}e{space} O{space}u{space}t");
+            Thread.Sleep(1000);
+            string repeatedString = new string(' ', 100);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(repeatedString);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            // Console.Write($"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b{backSpace}");
+            space = space.Remove(0, 1);
+            // backSpace += "\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+        }
+        Console.WriteLine($"{second}: Breathe Out");
+        Console.WriteLine("");
     }
 }
