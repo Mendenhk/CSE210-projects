@@ -95,6 +95,12 @@ class Program
                 ReflectingActivity reflectingActivity = new ReflectingActivity();
                 reflectingActivity.Run();
             }
+
+            if (choice == "3")
+            {
+                ListingActivity listingActivity = new ListingActivity();
+                listingActivity.Run();
+            }
         } while (choice != "4");
 
     }

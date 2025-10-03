@@ -22,6 +22,7 @@ public class ReflectingActivity : Activity
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowSpinner(3);
+        
         Console.WriteLine("Consider the following prompt:\n");
         Console.WriteLine($"--- {GetRandomPrompt()} ---\n");
         Console.WriteLine("When you have something in mind, press enter to continue.");

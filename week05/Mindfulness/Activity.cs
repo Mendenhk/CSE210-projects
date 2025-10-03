@@ -53,7 +53,7 @@ public class Activity
         {
             foreach (string s in animationStrings)
             {
-                Console.Write($"  {s}");
+                Console.Write($" {s}");
                 Thread.Sleep(250);
                 Console.Write("\b \b");
             }
