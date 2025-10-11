@@ -6,6 +6,7 @@ public class ChecklistGoal : Goal
     private int _bonus;
 
     //CONSTRUCTORS
+    //In addition to the standard attributes, a checklist goal also needs the target and the bonus amounts. Then, it should set the amount completed to begin at 0.
     public ChecklistGoal(string name, string description, string points, int target, int bonus) : base(name, description, points)
     {
         _target = target;

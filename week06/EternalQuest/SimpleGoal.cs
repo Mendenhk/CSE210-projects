@@ -4,12 +4,13 @@ public class SimpleGoal : Goal
     bool _isComplete;
 
     //CONSTRUCTORS
-
-    //GETTERS AND SETTERS
+    //This should also set the the variables for if it is complete to be false.
     public SimpleGoal(string name, string description, string points) : base(name, description, points)
     {
         
     }
+
+    //GETTERS AND SETTERS
 
     //METHODS
     public override void RecordEvent()
