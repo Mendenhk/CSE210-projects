@@ -1,3 +1,4 @@
+//GoalManager() - Initializes an empty list of goals and sets the player's score to be 0.
 public class GoalManager
 {
     //ATTRIBUTES
@@ -7,7 +8,8 @@ public class GoalManager
     //CONSTRUCTORS
     public GoalManager()
     {
-        
+        _goals = new List<Goal>();
+        _score = 0;
     }
 
     //GETTERS AND SETTERS
@@ -24,32 +26,67 @@ public class GoalManager
         Console.WriteLine($"\nYou have {_score} points.\n");
     }
 
-    // Lists the names of each of the goals.
+    // CLASS: Lists the names of each of the goals.
     public void ListGoalNames()
     {
         Console.WriteLine("hello");
     }
 
-    //Lists the details of each goal (including the checkbox of whether it is complete).
+    //ME: for displaying goals when choice 2 is chosen. Lists the details of each goal (including the checkbox of whether it is complete).
     public void ListGoalDetails()
     {
-        Console.WriteLine("hello");
+        foreach (Goal instance in _goals)
+        {
+            string checkbox;
+            if (instance.IsComplete())
+            {
+                checkbox = "(X)";
+            }
+            else
+            {
+                checkbox = "( )";
+            }
+            Console.WriteLine($"{checkbox} {instance.GetShortName()} ({instance.GetDescription()})");
+        }
     }
 
-    //Asks the user for the information about a new goal. Then, creates the goal and adds it to the list.
+    //Asks the user for the information about a new goal. Then, creates the goal and adds it to the list. (I added the function parameter)
     public void CreateGoal()
     {
         string goalChoice = "0";
-        Console.WriteLine("\nTHe types of Goals are;");
+        Console.WriteLine("\nThe types of Goals are;");
         Console.WriteLine("  1. Simple Goal");
         Console.WriteLine("  2. Eternal Goal");
         Console.WriteLine("  3. Checklist Goal");
-        Console.WriteLine("Which goal would you like to create?");
+        Console.Write("Which goal would you like to create? ");
         goalChoice = Console.ReadLine();
         Console.WriteLine($"goalChoice: {goalChoice}");
+        if (goalChoice == "1")
+        {
+            Console.Write("What is the name of your goal? ");
+            string name = Console.ReadLine();
+            Console.Write("What is a short description of it? ");
+            string description = Console.ReadLine();
+            Console.Write("What is the amount of points associated with this goal? ");
+            string points = Console.ReadLine();
+            SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
+            _goals.Add(simpleGoal);
+        }
+        // if (goalChoice == "2")
+        // {
+        //     Console.Write("What is the name of your goal? ");
+        //     string name = Console.ReadLine();
+        //     Console.Write("What is a short description of it? ");
+        //     string description = Console.ReadLine();
+        //     Console.WriteLine("What is the amount of points associated with this goal? ");
+        //     string points = Console.ReadLine();
+        //     SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
+        //     _goals.Add(simpleGoal);
+        //     // Console.WriteLine($"name: {simpleGoal.GetShortName()}\ndescription: {simpleGoal.GetDescription()}\npoints: {simpleGoal.GetPoints()}");
+        // }
     }
 
-    //Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal.
+    //ME: records an achieved goal.  CLASS: Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal. 
     public void RecordEvent()
     {
         Console.WriteLine("hello");

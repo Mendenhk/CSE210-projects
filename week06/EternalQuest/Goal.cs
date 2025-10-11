@@ -21,6 +21,20 @@ public class Goal
     }
 
     //GETTERS AND SETTERS
+    public string GetShortName()
+    {
+        return _shortName;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public string GetPoints()
+    {
+        return _points;
+    }
 
     //METHODS
     //RecordEvent - This method should do whatever is necessary for each specific kind of goal, such as marking a simple goal complete and adding to the number of times a checklist goal has been completed. It should return the point value associated with recording the event (keep in mind that it may contain a bonus in some cases if a checklist goal was just finished, for example).

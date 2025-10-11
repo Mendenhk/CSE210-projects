@@ -1,11 +1,12 @@
 using System;
 
+//next: finish "ListGoalDetails" of GoalManager.
 class Program
 {
     static void Main(string[] args)
     {
         GoalManager goalManager = new GoalManager();
-        string  choice = "0"; 
+        string choice = "0";
         while (choice != "6")
         {
             goalManager.DisplayPlayerInfo();
@@ -19,9 +20,14 @@ class Program
             Console.Write("Select a choice from the menu: ");
             choice = Console.ReadLine();
 
-            if(choice == "1")
+            if (choice == "1")
             {
                 goalManager.CreateGoal();
+            }
+
+            if (choice == "2")
+            {
+                goalManager.ListGoalDetails();
             }
         }
     }
