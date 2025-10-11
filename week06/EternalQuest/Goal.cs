@@ -50,9 +50,18 @@ public class Goal
     }
 
     //GetDetailsString - This method should return the details of a goal that could be shown in a list. It should include the checkbox, the short name, and description. Then in the case of the ChecklistGoal class, it should be overridden to shown the number of times the goal has been accomplished so far.
-    public virtual string GetDetailsString()
+    public virtual string GetDetailsString(Goal instance)
     {
-        return "hello";
+        string checkbox;
+            if (instance.IsComplete())
+            {
+                checkbox = "(X)";
+            }
+            else
+            {
+                checkbox = "( )";
+            }
+        return $"{checkbox} {instance.GetShortName()} ({instance.GetDescription()})";
     }
 
     //GetStringRepresentation - This method should provide all of the details of a goal in a way that is easy to save to a file, and then load later.

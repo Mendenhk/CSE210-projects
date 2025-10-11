@@ -1,6 +1,6 @@
 using System;
 
-//next: finish "ListGoalDetails" of GoalManager.
+//next: test Checklist Goal entry.
 class Program
 {
     static void Main(string[] args)

@@ -11,6 +11,7 @@ public class ChecklistGoal : Goal
     {
         _target = target;
         _bonus = bonus;
+        _amountCompleted = 0;
     }
 
     //GETTERS AND SETTERS
@@ -31,8 +32,17 @@ public class ChecklistGoal : Goal
         return "hello";
     }
 
-    public override string GetDetailsString()
+    public override string GetDetailsString(Goal instance)
     {
-        return "hello";
+         string checkbox;
+            if (instance.IsComplete())
+            {
+                checkbox = "(X)";
+            }
+            else
+            {
+                checkbox = "( )";
+            }
+        return $"{checkbox} {instance.GetShortName()} ({instance.GetDescription()}) -- Currently completed: {_amountCompleted}/{_target}";
     }
 }

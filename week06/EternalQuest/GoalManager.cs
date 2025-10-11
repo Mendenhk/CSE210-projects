@@ -37,16 +37,7 @@ public class GoalManager
     {
         foreach (Goal instance in _goals)
         {
-            string checkbox;
-            if (instance.IsComplete())
-            {
-                checkbox = "(X)";
-            }
-            else
-            {
-                checkbox = "( )";
-            }
-            Console.WriteLine($"{checkbox} {instance.GetShortName()} ({instance.GetDescription()})");
+            Console.WriteLine($"{instance.GetDetailsString(instance)}");
         }
     }
 
@@ -77,7 +68,7 @@ public class GoalManager
             string name = Console.ReadLine();
             Console.Write("What is a short description of it? ");
             string description = Console.ReadLine();
-            Console.WriteLine("What is the amount of points associated with this goal? ");
+            Console.Write("What is the amount of points associated with this goal? ");
             string points = Console.ReadLine();
             EternalGoal eternalGoal = new EternalGoal(name, description, points);
             _goals.Add(eternalGoal);
@@ -88,7 +79,7 @@ public class GoalManager
             string name = Console.ReadLine();
             Console.Write("What is a short description of it? ");
             string description = Console.ReadLine();
-            Console.WriteLine("What is the amount of points associated with this goal? ");
+            Console.Write("What is the amount of points associated with this goal? ");
             string points = Console.ReadLine();
             Console.Write("How many times does this goal need to be accomplished for the bonus? ");
             int target = int.Parse(Console.ReadLine());
