@@ -67,6 +67,6 @@ public class Goal
     //GetStringRepresentation - This method should provide all of the details of a goal in a way that is easy to save to a file, and then load later.
     public virtual string GetStringRepresentation()
     {
-        return "hello";
+        return $"{_shortName},{_description},{_points}";
     }
 }

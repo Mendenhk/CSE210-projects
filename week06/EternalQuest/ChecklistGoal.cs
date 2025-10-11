@@ -30,7 +30,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "hello";
+        return $"ChecklistGoal:{base.GetStringRepresentation()},{_bonus},{_target},{_amountCompleted}";
     }
 
     public override string GetDetailsString(Goal instance)

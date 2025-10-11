@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-//next: test Checklist Goal entry.
+//next: finish file save method
 class Program
 {
     static void Main(string[] args)

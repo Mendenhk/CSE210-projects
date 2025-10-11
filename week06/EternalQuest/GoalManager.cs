@@ -105,7 +105,8 @@ public class GoalManager
         {
             foreach(Goal instance in _goals)
             {
-                instance.GetStringRepresentation()
+                string fileLine = instance.GetStringRepresentation();
+                streamWriter.WriteLine(fileLine);
             }
         }
     }

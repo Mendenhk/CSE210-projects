@@ -1,0 +1,3 @@
+SimpleGoal:,run,run lots,10,False
+EternalGoal:,swim,swim lots,10
+SimpleGoal:,eat,eat lots,10,100,0,100
