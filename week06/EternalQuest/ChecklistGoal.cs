@@ -24,7 +24,8 @@ public class ChecklistGoal : Goal
 
     public override bool IsComplete()
     {
-        return true;
+        //need to create a more complicated method for this.
+        return false;
     }
 
     public override string GetStringRepresentation()

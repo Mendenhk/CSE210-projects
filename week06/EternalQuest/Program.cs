@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 //next: test Checklist Goal entry.
 class Program
@@ -29,6 +30,11 @@ class Program
             if (choice == "2")
             {
                 goalManager.ListGoalDetails();
+            }
+
+            if (choice == "3")
+            {
+                goalManager.SaveGoals();
             }
         }
     }

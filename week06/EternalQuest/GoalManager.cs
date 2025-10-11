@@ -100,7 +100,14 @@ public class GoalManager
     //Saves the list of goals to a file.
     public void SaveGoals()
     {
-        Console.WriteLine("hello");
+        string filename = "goals.txt";
+        using (StreamWriter streamWriter = new StreamWriter(filename))
+        {
+            foreach(Goal instance in _goals)
+            {
+                instance.GetStringRepresentation()
+            }
+        }
     }
 
     //Loads the list of goals from a file.
