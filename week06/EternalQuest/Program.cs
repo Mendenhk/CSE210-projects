@@ -18,6 +18,11 @@ class Program
             Console.WriteLine("  6. Quit");
             Console.Write("Select a choice from the menu: ");
             choice = Console.ReadLine();
+
+            if(choice == "1")
+            {
+                goalManager.CreateGoal();
+            }
         }
     }
 }

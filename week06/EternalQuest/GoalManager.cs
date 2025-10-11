@@ -18,7 +18,7 @@ public class GoalManager
         _score = 0;
     }
 
-    //Displays the players current score.
+    //(completed) Displays the players current score.
     public void DisplayPlayerInfo()
     {
         Console.WriteLine($"\nYou have {_score} points.\n");
@@ -39,7 +39,14 @@ public class GoalManager
     //Asks the user for the information about a new goal. Then, creates the goal and adds it to the list.
     public void CreateGoal()
     {
-        Console.WriteLine("hello");
+        string goalChoice = "0";
+        Console.WriteLine("\nTHe types of Goals are;");
+        Console.WriteLine("  1. Simple Goal");
+        Console.WriteLine("  2. Eternal Goal");
+        Console.WriteLine("  3. Checklist Goal");
+        Console.WriteLine("Which goal would you like to create?");
+        goalChoice = Console.ReadLine();
+        Console.WriteLine($"goalChoice: {goalChoice}");
     }
 
     //Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal.
