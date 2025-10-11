@@ -15,13 +15,13 @@ public class GoalManager
     //METHODS
     public void Start()
     {
-        Console.WriteLine("hello");
+        _score = 0;
     }
 
     //Displays the players current score.
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine("hello");
+        Console.WriteLine($"\nYou have {_score} points.\n");
     }
 
     // Lists the names of each of the goals.
