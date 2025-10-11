@@ -103,6 +103,7 @@ public class GoalManager
         string filename = "goals.txt";
         using (StreamWriter streamWriter = new StreamWriter(filename))
         {
+            streamWriter.WriteLine($"{_score}");
             foreach(Goal instance in _goals)
             {
                 string fileLine = instance.GetStringRepresentation();
