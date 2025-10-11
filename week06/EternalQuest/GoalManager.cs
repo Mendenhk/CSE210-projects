@@ -60,7 +60,6 @@ public class GoalManager
         Console.WriteLine("  3. Checklist Goal");
         Console.Write("Which goal would you like to create? ");
         goalChoice = Console.ReadLine();
-        Console.WriteLine($"goalChoice: {goalChoice}");
         if (goalChoice == "1")
         {
             Console.Write("What is the name of your goal? ");
@@ -72,18 +71,18 @@ public class GoalManager
             SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
             _goals.Add(simpleGoal);
         }
-        // if (goalChoice == "2")
-        // {
-        //     Console.Write("What is the name of your goal? ");
-        //     string name = Console.ReadLine();
-        //     Console.Write("What is a short description of it? ");
-        //     string description = Console.ReadLine();
-        //     Console.WriteLine("What is the amount of points associated with this goal? ");
-        //     string points = Console.ReadLine();
-        //     SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
-        //     _goals.Add(simpleGoal);
-        //     // Console.WriteLine($"name: {simpleGoal.GetShortName()}\ndescription: {simpleGoal.GetDescription()}\npoints: {simpleGoal.GetPoints()}");
-        // }
+        if (goalChoice == "2")
+        {
+            Console.Write("What is the name of your goal? ");
+            string name = Console.ReadLine();
+            Console.Write("What is a short description of it? ");
+            string description = Console.ReadLine();
+            Console.WriteLine("What is the amount of points associated with this goal? ");
+            string points = Console.ReadLine();
+            EternalGoal eternalGoal = new EternalGoal(name, description, points);
+            _goals.Add(eternalGoal);
+            // Console.WriteLine($"name: {simpleGoal.GetShortName()}\ndescription: {simpleGoal.GetDescription()}\npoints: {simpleGoal.GetPoints()}");
+        }
     }
 
     //ME: records an achieved goal.  CLASS: Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal. 

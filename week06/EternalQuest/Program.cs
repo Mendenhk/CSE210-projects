@@ -12,6 +12,7 @@ class Program
             goalManager.DisplayPlayerInfo();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("  1. Create New Goal");
+            //finished 2.
             Console.WriteLine("  2. List Goals");
             Console.WriteLine("  3. Save Goals");
             Console.WriteLine("  4. Load Goals");

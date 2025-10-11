@@ -16,9 +16,10 @@ public class EternalGoal : Goal
         Console.WriteLine("hello");
     }
 
+    //why is this method needed if the Goal method returns the same value?
     public override bool IsComplete()
     {
-        return true;
+        return false;
     }
 
     public override string GetStringRepresentation()
