@@ -15,6 +15,10 @@ public class ChecklistGoal : Goal
     }
 
     //GETTERS AND SETTERS
+    public void SetAmountCompleted(int amountCompleted)
+    {
+        _amountCompleted = amountCompleted;
+    }
 
     //METHODS
     public override void RecordEvent()
@@ -30,7 +34,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal:{base.GetStringRepresentation()},{_bonus},{_target},{_amountCompleted}";
+        return $"ChecklistGoal,{base.GetStringRepresentation()},{_bonus},{_target},{_amountCompleted}";
     }
 
     public override string GetDetailsString(Goal instance)

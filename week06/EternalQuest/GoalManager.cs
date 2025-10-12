@@ -35,6 +35,7 @@ public class GoalManager
     //ME: for displaying goals when choice 2 is chosen. Lists the details of each goal (including the checkbox of whether it is complete).
     public void ListGoalDetails()
     {
+        Console.WriteLine("\nThe goals are:");
         foreach (Goal instance in _goals)
         {
             Console.WriteLine($"{instance.GetDetailsString(instance)}");
@@ -115,6 +116,47 @@ public class GoalManager
     //Loads the list of goals from a file.
     public void LoadGoals()
     {
-        Console.WriteLine("hello");
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
+        string[] lines = System.IO.File.ReadAllLines(filename);
+        _score = int.Parse(lines[0]);
+        //below: skips the first string, the score.
+        foreach (string line in lines[1..])
+        {
+            string[] parts = line.Split(",");
+            if (parts[0] == "SimpleGoal")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                string points = parts[3];
+                bool isComplete = bool.Parse(parts[4]);
+                SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
+                if (isComplete)
+                {
+                    simpleGoal.SetIsCompleteTrue();
+                }
+                _goals.Add(simpleGoal);
+            }
+            else if (parts[0] == "EternalGoal")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                string points = parts[3];
+                EternalGoal eternalGoal = new EternalGoal(name, description, points);
+                _goals.Add(eternalGoal);
+            }
+            else if (parts[0] == "ChecklistGoal")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                string points = parts[3];
+                int target = int.Parse(parts[4]);
+                int bonus = int.Parse(parts[5]);
+                int amountCompleted = int.Parse(parts[6]);
+                ChecklistGoal checklistGoal = new ChecklistGoal(name, description, points, target, bonus);
+                checklistGoal.SetAmountCompleted(amountCompleted);
+                _goals.Add(checklistGoal);
+            }
+        }
     }
 }

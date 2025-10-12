@@ -26,15 +26,17 @@ class Program
             {
                 goalManager.CreateGoal();
             }
-
             if (choice == "2")
             {
                 goalManager.ListGoalDetails();
             }
-
             if (choice == "3")
             {
                 goalManager.SaveGoals();
+            }
+            if (choice == "4")
+            {
+                goalManager.LoadGoals();
             }
         }
     }
