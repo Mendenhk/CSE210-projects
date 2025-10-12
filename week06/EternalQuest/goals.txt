@@ -1,2 +1,4 @@
 0
-ChecklistGoal,eat,eatLots,20,450,3,0
+SimpleGoal,run,runLots,10,False
+EternalGoal,swim,swimLots,20
+ChecklistGoal,eat,eatLots,30,1,1,0

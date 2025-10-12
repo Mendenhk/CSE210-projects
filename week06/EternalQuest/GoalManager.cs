@@ -29,7 +29,13 @@ public class GoalManager
     // CLASS: Lists the names of each of the goals.
     public void ListGoalNames()
     {
-        Console.WriteLine("hello");
+        Console.WriteLine("The goals are:");
+        int i = 1;
+        foreach(Goal instance in _goals)
+        {
+            Console.WriteLine($"{i}. {instance.GetShortName()}");
+            i++;
+        }
     }
 
     //ME: for displaying goals when choice 2 is chosen. Lists the details of each goal (including the checkbox of whether it is complete).
@@ -95,7 +101,17 @@ public class GoalManager
     //ME: records an achieved goal.  CLASS: Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal. 
     public void RecordEvent()
     {
-        Console.WriteLine("hello");
+        ListGoalNames();
+        Console.Write("Which goal did you accomplish? ");
+        string accomplished = Console.ReadLine();
+        foreach(Goal instance in _goals)
+        {
+            if(accomplished == instance.GetShortName())
+            {
+                int points = instance.RecordEvent();
+                _score += points;    
+            }
+        }
     }
 
     //Saves the list of goals to a file.

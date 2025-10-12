@@ -38,6 +38,10 @@ class Program
             {
                 goalManager.LoadGoals();
             }
+            if (choice == "5")
+            {
+                goalManager.RecordEvent();
+            }
         }
     }
 }

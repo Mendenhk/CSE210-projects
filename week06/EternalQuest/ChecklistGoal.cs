@@ -21,9 +21,20 @@ public class ChecklistGoal : Goal
     }
 
     //METHODS
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine("hello");  
+        _amountCompleted++;
+        int baseAmount = int.Parse(GetPoints());
+        int totalAmount;
+        if (_amountCompleted >= _target)
+        {
+            totalAmount = baseAmount + _bonus;
+            return totalAmount;
+        }
+        else
+        {
+            return int.Parse(GetPoints());
+        }
     }
 
     public override bool IsComplete()

@@ -17,9 +17,10 @@ public class SimpleGoal : Goal
     }
 
     //METHODS
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine("hello");  
+        _isComplete = true;
+        return int.Parse(GetPoints());
     }
 
     public override bool IsComplete()

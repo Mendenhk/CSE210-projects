@@ -11,9 +11,9 @@ public class EternalGoal : Goal
     //GETTERS AND SETTERS
 
     //METHODS
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine("hello");
+        return int.Parse(GetPoints());
     }
 
     //why is this method needed if the Goal method returns the same value?
