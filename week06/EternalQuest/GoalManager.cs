@@ -23,13 +23,13 @@ public class GoalManager
     //(completed) Displays the players current score.
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"\nYou have {_score} points.\n");
+        Console.WriteLine($"\nYou have {_score} points.");
     }
 
     // CLASS: Lists the names of each of the goals.
     public void ListGoalNames()
     {
-        Console.WriteLine("The goals are:");
+        Console.WriteLine("\nThe goals are:");
         int i = 1;
         foreach(Goal instance in _goals)
         {
@@ -103,15 +103,10 @@ public class GoalManager
     {
         ListGoalNames();
         Console.Write("Which goal did you accomplish? ");
-        string accomplished = Console.ReadLine();
-        foreach(Goal instance in _goals)
-        {
-            if(accomplished == instance.GetShortName())
-            {
-                int points = instance.RecordEvent();
-                _score += points;    
-            }
-        }
+        int index = int.Parse(Console.ReadLine());
+        int points = (_goals[index - 1]).RecordEvent();
+        Console.WriteLine($"\nCongratulations!  You have earned {points} points.\n");
+        _score += points;
     }
 
     //Saves the list of goals to a file.

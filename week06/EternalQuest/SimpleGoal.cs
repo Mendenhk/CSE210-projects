@@ -20,7 +20,7 @@ public class SimpleGoal : Goal
     public override int RecordEvent()
     {
         _isComplete = true;
-        return int.Parse(GetPoints());
+        return base.RecordEvent();
     }
 
     public override bool IsComplete()

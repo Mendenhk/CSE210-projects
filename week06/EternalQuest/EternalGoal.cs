@@ -13,7 +13,7 @@ public class EternalGoal : Goal
     //METHODS
     public override int RecordEvent()
     {
-        return int.Parse(GetPoints());
+        return base.RecordEvent();
     }
 
     //why is this method needed if the Goal method returns the same value?

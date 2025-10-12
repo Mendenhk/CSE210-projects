@@ -33,7 +33,7 @@ public class ChecklistGoal : Goal
         }
         else
         {
-            return int.Parse(GetPoints());
+            return base.RecordEvent();
         }
     }
 
@@ -51,7 +51,7 @@ public class ChecklistGoal : Goal
     public override string GetDetailsString(Goal instance)
     {
          string checkbox;
-            if (instance.IsComplete())
+            if (_amountCompleted >= _target)
             {
                 checkbox = "(X)";
             }
