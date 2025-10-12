@@ -23,7 +23,7 @@ public class GoalManager
     //(completed) Displays the players current score.
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"\nYou have {_score} points.");
+        Console.WriteLine($"\nYou have {_score} points.\n");
     }
 
     // CLASS: Lists the names of each of the goals.
@@ -105,6 +105,7 @@ public class GoalManager
         Console.Write("Which goal did you accomplish? ");
         int index = int.Parse(Console.ReadLine());
         int points = (_goals[index - 1]).RecordEvent();
+        _goals[index - 1].Confetti();
         Console.WriteLine($"\nCongratulations!  You have earned {points} points.\n");
         _score += points;
     }
@@ -112,7 +113,8 @@ public class GoalManager
     //Saves the list of goals to a file.
     public void SaveGoals()
     {
-        string filename = "goals.txt";
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
         using (StreamWriter streamWriter = new StreamWriter(filename))
         {
             streamWriter.WriteLine($"{_score}");
@@ -161,8 +163,8 @@ public class GoalManager
                 string name = parts[1];
                 string description = parts[2];
                 string points = parts[3];
-                int target = int.Parse(parts[4]);
-                int bonus = int.Parse(parts[5]);
+                int bonus = int.Parse(parts[4]);
+                int target = int.Parse(parts[5]);
                 int amountCompleted = int.Parse(parts[6]);
                 ChecklistGoal checklistGoal = new ChecklistGoal(name, description, points, target, bonus);
                 checklistGoal.SetAmountCompleted(amountCompleted);

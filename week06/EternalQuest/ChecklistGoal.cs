@@ -50,15 +50,20 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString(Goal instance)
     {
-         string checkbox;
-            if (_amountCompleted >= _target)
-            {
-                checkbox = "(X)";
-            }
-            else
-            {
-                checkbox = "( )";
-            }
+        string checkbox;
+        if (_amountCompleted >= _target)
+        {
+            checkbox = "(X)";
+        }
+        else
+        {
+            checkbox = "( )";
+        }
         return $"{checkbox} {instance.GetShortName()} ({instance.GetDescription()}) -- Currently completed: {_amountCompleted}/{_target}";
+    }
+    
+    public override void Confetti()
+    {
+        base.Confetti();
     }
 }

@@ -1,4 +1,5 @@
-0
-SimpleGoal,run,runLots,10,False
-EternalGoal,swim,swimLots,20
-ChecklistGoal,eat,eatLots,30,1,1,0
+850
+SimpleGoal,give a talk,speak in sacrament meeting when asked,100,True
+EternalGoal,study the scriptures,study for at least 10 minutes,50
+ChecklistGoal,attend the temple,attend and perform any ordinance,50,500,3,3
+ChecklistGoal,wake up early,wake up by at least 6:00am,10,1000,10,0

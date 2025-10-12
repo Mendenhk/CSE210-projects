@@ -26,4 +26,9 @@ public class EternalGoal : Goal
     {
         return $"EternalGoal,{base.GetStringRepresentation()}";
     }
+    
+    public override void Confetti()
+    {
+        base.Confetti();
+    }
 }

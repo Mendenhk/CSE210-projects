@@ -69,4 +69,22 @@ public class Goal
     {
         return $"{_shortName},{_description},{_points}";
     }
+
+    public virtual void Confetti()
+    {
+        char[] confettiChars = { '!', '@', '$', '#', '^', '*', '&', '(', '_' };
+        string[] spaces = { " ", "    ", "      ", "        " };
+        Random random = new Random();
+        for (int j = 0; j < 10; j++)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                char confetti = confettiChars[random.Next(confettiChars.Length)];
+                string space = spaces[random.Next(spaces.Length)];
+                Console.Write(confetti + space);
+            }
+            Console.WriteLine();
+            Thread.Sleep(200);
+        }
+    }
 }

@@ -32,4 +32,9 @@ public class SimpleGoal : Goal
     {
         return $"SimpleGoal,{base.GetStringRepresentation()},{_isComplete}";
     }
+    
+    public override void Confetti()
+    {
+        base.Confetti();
+    }
 }
