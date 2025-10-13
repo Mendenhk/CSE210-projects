@@ -7,4 +7,7 @@ public class Swimming
     //GETTERS AND SETTERS
 
     //METHODS
+    public virtual string GetSummary(){
+        return "hello";
+    }
 }
