@@ -1,28 +1,34 @@
 public class Running : Activity
 {
     //ATTRIBUTES
+    //remove unneeded
+    private int _distance;
+    private int _speed;
+    private int _pace;
+    private int _numberOfLaps;
 
     //CONSTRUCTORS
 
     //GETTERS AND SETTERS
 
     //METHODS
-    public string GetSummary()
+    //may need to remove GetSummary from here (do not overide base class!!!)
+    public override string GetSummary()
     {
         return "hello";
     }
     
-    public void GetDistance()
+    public override void GetDistance()
     {
         
     }
 
-    public void GetSpeed()
+    public override void GetSpeed()
     {
         
     }
 
-    public void GetPace()
+    public override void GetPace()
     {
         
     }
