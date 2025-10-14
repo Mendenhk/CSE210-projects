@@ -1,4 +1,4 @@
-public class Activity
+public abstract class Activity
 {
     //ATTRIBUTES
     //maybe protected rather than private
@@ -12,20 +12,11 @@ public class Activity
 
     //METHODS
     //these may need to be defined with abstract rather than virtual, class would have to be changed to abstract. See rubric #4
-    public virtual void GetDistance()
-    {
-        
-    }
+    public abstract void GetDistance();
 
-    public virtual void GetSpeed()
-    {
-        
-    }
+    public abstract void GetSpeed();
 
-    public virtual void GetPace()
-    {
-
-    }
+    public abstract void GetPace();
 
     //GetSummary method is defined in the base class and calls virtual methods for getting the distance, speed, and pace.
     //points docked for the following: GetSummary method is defined in the base class but it is overridden in each of the derived classes, rather than using a single method in the base class that does not need to be overridden.
