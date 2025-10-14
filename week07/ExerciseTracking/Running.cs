@@ -12,12 +12,6 @@ public class Running : Activity
     //GETTERS AND SETTERS
 
     //METHODS
-    //may need to remove GetSummary from here (do not overide base class!!!)
-    public override string GetSummary()
-    {
-        return "hello";
-    }
-    
     public override void GetDistance()
     {
         

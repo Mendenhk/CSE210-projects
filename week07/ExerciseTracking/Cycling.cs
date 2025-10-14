@@ -12,12 +12,6 @@ public class Cycling : Activity
     //GETTERS AND SETTERS
 
     //METHODS
-    //may need to remove GetSummary from here (do not overide base class!!!)
-    public virtual string GetSummary()
-    {
-        return "hello";
-    }
-    
     public override void GetDistance()
     {
         
