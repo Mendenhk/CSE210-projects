@@ -22,6 +22,7 @@ public abstract class Activity
     //points docked for the following: GetSummary method is defined in the base class but it is overridden in each of the derived classes, rather than using a single method in the base class that does not need to be overridden.
     //Me: not virtual because will not be overridden
     public string GetSummary(){
-        return "hello";
+        return "produces a string with all the summary information. (date, event type, length and/or distance, speed and/or pace, number of laps)";
+        //
     }
 }

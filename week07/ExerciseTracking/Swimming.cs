@@ -12,6 +12,8 @@ public class Swimming : Activity
     //GETTERS AND SETTERS
 
     //METHODS
+
+    
     public override void GetDistance()
     {
         
