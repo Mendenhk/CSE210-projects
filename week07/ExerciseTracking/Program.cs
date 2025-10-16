@@ -15,6 +15,9 @@ class Program
         //format = date, length(time ran in minutes), # of laps (50m each)
         Swimming swimming = new Swimming("12 Oct 2025", 35, 50);
         _activities.Add(swimming);
+        //format = date, length(time ran in minutes), cycling speed (mph)
+        Cycling cycling = new Cycling("10 Oct 2025", 60, 18);
+        _activities.Add(cycling);
 
         foreach (Activity instance in _activities)
         {

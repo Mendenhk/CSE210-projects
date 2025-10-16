@@ -5,15 +5,10 @@ public class Cycling : Activity
     private int _speed;
 
     //CONSTRUCTORS
- //remove this if not needed
-    private double _distance;
-
-
-    //CONSTRUCTORS
     //ALL of the following is copied and pasted from the running class.  Change as needed
-    public Cycling (string date, double length, double distance) : base(date, length)
+    public Cycling (string date, double length, int speed) : base(date, length)
     {
-        _distance = distance;
+        _speed = speed;
     }
 
     //GETTERS AND SETTERS
@@ -21,17 +16,18 @@ public class Cycling : Activity
     //METHODS
     public override double GetDistance()
     {
-        return 5/9;
+        //distance = (length (min) * speed (mph)) / 60 (min/hr)
+        return _length * _speed / 60;
     }
 
     public override double GetSpeed()
     {
-        return 5/9;
+        return (double)_speed;
     }
 
     public override double GetPace()
     {
-        return 5/9;
+        return 60 / _speed;
     }
 
 }
