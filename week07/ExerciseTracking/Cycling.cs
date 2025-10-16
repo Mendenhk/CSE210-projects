@@ -6,12 +6,12 @@ public class Cycling : Activity
 
     //CONSTRUCTORS
  //remove this if not needed
-    private float _distance;
+    private double _distance;
 
 
     //CONSTRUCTORS
     //ALL of the following is copied and pasted from the running class.  Change as needed
-    public Cycling (string date, float length, float distance) : base(date, length)
+    public Cycling (string date, double length, double distance) : base(date, length)
     {
         _distance = distance;
     }
@@ -19,17 +19,17 @@ public class Cycling : Activity
     //GETTERS AND SETTERS
 
     //METHODS
-    public override float GetDistance()
+    public override double GetDistance()
     {
         return 5/9;
     }
 
-    public override float GetSpeed()
+    public override double GetSpeed()
     {
         return 5/9;
     }
 
-    public override float GetPace()
+    public override double GetPace()
     {
         return 5/9;
     }

@@ -7,11 +7,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Activity> _activities;
+        List<Activity> _activities = new List<Activity>();
 
+        //format = date, length(time ran in minutes), distance (miles)
+        Running running = new Running("15 Oct 2025", 25, 3.0);
+        _activities.Add(running);
+        //format = date, length(time ran in minutes), # of laps (50m each)
+        Swimming swimming = new Swimming("12 Oct 2025", 35, 50);
+        _activities.Add(swimming);
 
-        
-        
-        Console.WriteLine("Hello World! This is the ExerciseTracking Project.");
+        foreach (Activity instance in _activities)
+        {
+            Console.WriteLine(instance.GetSummary());
+        }
     }
 }

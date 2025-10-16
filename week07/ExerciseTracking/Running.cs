@@ -1,11 +1,11 @@
 public class Running : Activity
 {
     //ATTRIBUTES
-    //remove unneeded
-    private float _distance;
+    //distance in miles
+    private double _distance;
 
     //CONSTRUCTORS
-    public Running (string date, float length, float distance) : base(date, length)
+    public Running (string date, double length, double distance) : base(date, length)
     {
         _distance = distance;
     }
@@ -13,19 +13,19 @@ public class Running : Activity
     //GETTERS AND SETTERS
 
     //METHODS
-    public override float GetDistance()
+    public override double GetDistance()
     {
-        return 5/9;
+        return _distance;
     }
 
-    public override float GetSpeed()
+    public override double GetSpeed()
     {
-        return 5/9;
+        return _distance / _length * 60;
     }
 
-    public override float GetPace()
+    public override double GetPace()
     {
-        return 5/9;
+        return _length / _distance;
     }
     
 }

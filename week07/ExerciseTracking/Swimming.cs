@@ -4,33 +4,29 @@ public class Swimming : Activity
     //remove unneeded
     private int _numberOfLaps;
 
-    //remove this if not needed
-    private float _distance;
-
-
     //CONSTRUCTORS
     //ALL of the following is copied and pasted from the running class.  Change as needed
-    public Swimming (string date, float length, float distance) : base(date, length)
+    public Swimming (string date, double length, int laps) : base(date, length)
     {
-        _distance = distance;
+        _numberOfLaps = laps;
     }
 
     //GETTERS AND SETTERS
 
     //METHODS
-    public override float GetDistance()
+    public override double GetDistance()
     {
-        return 5/9;
+        return _numberOfLaps * 50 / 1000 * 0.62;
     }
 
-    public override float GetSpeed()
+    public override double GetSpeed()
     {
-        return 5/9;
+        return GetDistance() / _length * 60;
     }
 
-    public override float GetPace()
+    public override double GetPace()
     {
-        return 5/9;
+        return _length / GetDistance();
     }
 
 }
